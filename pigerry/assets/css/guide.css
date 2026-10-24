@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   Swine health guide page: soft dark green theme (same palette as the
+   assessment, export and login pages). Scoped to body.page-guide.
+   ========================================================================== */
+
+body.page-guide {
+    --g-bg: #121A16;
+    --g-card: #1A241F;
+    --g-line: #2C3B33;
+    --g-accent: #3DBE74;
+    --g-accent-rgb: 61, 190, 116;
+    --g-accent-hover: #5FD38D;
+    --g-text: #EAF1EC;
+    --g-soft: #A9B8AE;
+    --g-muted: #82938A;
+    --g-warn: #3DBE74;            /* alert box color: same green as the accent */
+    --g-warn-rgb: 61, 190, 116;
+
+    background: var(--g-bg);
+    color: var(--g-text);
+    color-scheme: dark;
+}
+
+body.page-guide .main {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+body.page-guide .main h1,
+body.page-guide .main h2,
+body.page-guide .main h3 {
+    color: var(--g-text);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+body.page-guide :focus-visible { outline-color: var(--g-accent); }
+
+/* ---- Heading ---------------------------------------------------------- */
+body.page-guide .page-head { padding: 2.5rem 0 1rem; border-bottom: 0; }
+body.page-guide .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 0.5rem; }
+body.page-guide .page-sub { color: var(--g-soft); font-size: 1rem; }
+body.page-guide .section--tight { padding: 1.25rem 0 1.5rem; }
+body.page-guide .site-footer { border-top: 0; color: var(--g-muted); }
+
+.g-heading { font-size: 1.4rem; margin: 0 0 1.25rem; }
+
+/* ---- Warning box ------------------------------------------------------ */
+.g-alert {
+    padding: 1.6rem;
+    background: rgba(var(--g-warn-rgb), 0.08);
+    border: 1px solid rgba(var(--g-warn-rgb), 0.4);
+    border-left: 4px solid var(--g-warn);
+    border-radius: 12px;
+}
+.g-alert h2 { font-size: 1.15rem; margin: 0 0 0.9rem; }
+.g-signs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.5rem 1.5rem;
+}
+.g-signs li { position: relative; padding-left: 1.1rem; color: var(--g-text); font-size: 0.95rem; }
+.g-signs li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--g-warn);
+}
+.g-alert-note { margin: 1rem 0 0; font-size: 0.88rem; color: var(--g-soft); }
+
+/* ---- Practice cards --------------------------------------------------- */
+.g-card {
+    height: 100%;
+    padding: 1.4rem;
+    background: var(--g-card);
+    border: 1px solid var(--g-line);
+    border-radius: 12px;
+}
+.g-num { display: block; font-size: 0.85rem; font-weight: 700; color: var(--g-accent); margin-bottom: 0.5rem; }
+.g-card h3 { font-size: 1.05rem; margin: 0 0 0.45rem; }
+.g-card p { margin: 0; color: var(--g-soft); font-size: 0.93rem; }
+
+/* ---- Call to action --------------------------------------------------- */
+.g-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    padding: 1.6rem;
+    background: var(--g-card);
+    border: 1px solid var(--g-line);
+    border-radius: 12px;
+}
+.g-cta h2 { font-size: 1.15rem; margin: 0 0 0.25rem; }
+.g-cta p { margin: 0; color: var(--g-soft); font-size: 0.93rem; }
+.g-note { margin: 1rem 0 0; font-size: 0.82rem; color: var(--g-muted); }
+
+body.page-guide .btn-pvet {
+    background: var(--g-accent);
+    border-color: var(--g-accent);
+    color: #06140C;
+    font-weight: 600;
+}
+body.page-guide .btn-pvet:hover,
+body.page-guide .btn-pvet:focus-visible {
+    background: var(--g-accent-hover);
+    border-color: var(--g-accent-hover);
+    color: #06140C;
+}
+
+/* ---- Small screens ---------------------------------------------------- */
+@media (max-width: 991.98px) {
+    body.page-guide .page-head { padding: 1.5rem 0 1rem; }
+}
+@media (max-width: 575.98px) {
+    .g-alert, .g-card, .g-cta { padding: 1.25rem; }
+}

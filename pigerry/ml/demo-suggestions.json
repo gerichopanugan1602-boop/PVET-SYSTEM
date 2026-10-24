@@ -1,0 +1,37 @@
+{
+  "version": "pvet-review-2026-10-07-v1",
+  "approved": false,
+  "demonstration_only": true,
+  "model_version": "kmeans-k5-weighted",
+  "model_sha256": "7b2dd7b3bef009dd7ce9680f5c0a6f5645a8164d83373b5c46cd4d08fe343acb",
+  "prepared_on": "2026-10-07",
+  "source_filename": "aa18953b-1f9d-4977-ba5e-788332a7408e.jpg",
+  "reviewer_name": null,
+  "review_date": null,
+  "formal_approval_recorded": false,
+  "reference_document": "docs/PVET_CLUSTER_RECOMMENDATIONS.md",
+  "notice": "Based on the supplied PVET review; formal approval, availability and individual eligibility remain unconfirmed.",
+  "recommendation_kinds": {
+    "Disinfectant Provision": "support",
+    "DA-LGU ASF Checkpoint Monitoring": "agency_activity",
+    "Farm Management and Feed-Related Advice": "advice",
+    "Biosecurity and Farm Sanitation Advice": "advice",
+    "Proper Disinfection and Sanitation Advice": "advice",
+    "Biosecurity Advice": "advice"
+  },
+  "resource_descriptions": {
+    "Disinfectant Provision": "The supplied review describes disinfectant provision to support cleaning and sanitation of pig farms.",
+    "DA-LGU ASF Checkpoint Monitoring": "DA-LGU checkpoint monitoring is an agency activity described in the review to support ASF prevention and farm biosecurity.",
+    "Farm Management and Feed-Related Advice": "Guidance on farm management, feed management and selection, feed storage, and cost-efficient feeding practices.",
+    "Biosecurity and Farm Sanitation Advice": "Advice on the proper use of footbaths and disinfectants, regular cleaning of pig pens and equipment, and limiting unnecessary farm visitors.",
+    "Proper Disinfection and Sanitation Advice": "Advice on using disinfectants properly to clean pig pens and other farm areas and maintaining regular sanitation practices.",
+    "Biosecurity Advice": "Basic guidance on cleaning and disinfection of pig farms to support farm biosecurity."
+  },
+  "clusters": {
+    "0": "Disinfectant Provision\nDA-LGU ASF Checkpoint Monitoring",
+    "1": "Farm Management and Feed-Related Advice",
+    "2": "Biosecurity and Farm Sanitation Advice\nDA-LGU ASF Checkpoint Monitoring\nDisinfectant Provision",
+    "3": "Disinfectant Provision\nProper Disinfection and Sanitation Advice",
+    "4": "Disinfectant Provision\nBiosecurity Advice"
+  }
+}

@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   Export page: soft dark green theme (matches the assessment page).
+   Scoped to body.page-export. Change the variables below to re-color it.
+   ========================================================================== */
+
+body.page-export {
+    --x-bg: #121A16;              /* page background */
+    --x-card: #1A241F;            /* panels, inputs */
+    --x-line: #2C3B33;            /* borders and dividers */
+    --x-accent: #3DBE74;          /* main green accent */
+    --x-accent-rgb: 61, 190, 116; /* same green, for transparent versions */
+    --x-accent-hover: #5FD38D;
+    --x-text: #EAF1EC;
+    --x-soft: #A9B8AE;
+    --x-muted: #82938A;
+    --x-error: #F08A80;
+
+    background: var(--x-bg);
+    color: var(--x-text);
+    color-scheme: dark;
+}
+
+body.page-export .main {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+body.page-export .main h1,
+body.page-export .main h2,
+body.page-export .main h3 {
+    color: var(--x-text);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+body.page-export :focus-visible { outline-color: var(--x-accent); }
+
+/* ---- Page heading ----------------------------------------------------- */
+body.page-export .page-head { padding: 2.5rem 0 1.25rem; border-bottom: 0; }
+body.page-export .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 0.5rem; }
+body.page-export .page-sub { color: var(--x-soft); font-size: 1rem; }
+body.page-export .section--tight { padding: 1.25rem 0 3.5rem; }
+
+/* ---- Links, notices, footer ------------------------------------------- */
+body.page-export .text-link { color: var(--x-text); text-decoration-color: var(--x-accent); }
+body.page-export .text-link:hover { color: var(--x-accent-hover); }
+body.page-export .notice {
+    background: rgba(var(--x-accent-rgb), 0.12);
+    border-left-color: var(--x-accent);
+    color: var(--x-text);
+}
+body.page-export .notice--error {
+    background: rgba(240, 138, 128, 0.12);
+    border-left-color: var(--x-error);
+}
+body.page-export .site-footer { border-top: 0; color: var(--x-muted); }
+
+/* ---- Buttons ---------------------------------------------------------- */
+body.page-export .btn-pvet {
+    background: var(--x-accent);
+    border-color: var(--x-accent);
+    color: #06140C;
+    font-weight: 600;
+}
+body.page-export .btn-pvet:hover,
+body.page-export .btn-pvet:focus-visible {
+    background: var(--x-accent-hover);
+    border-color: var(--x-accent-hover);
+    color: #06140C;
+}
+body.page-export .btn-pvet:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ---- Panels ----------------------------------------------------------- */
+@keyframes x-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.x-panel {
+    height: 100%;
+    padding: 1.6rem;
+    background: var(--x-card);
+    border: 1px solid var(--x-line);
+    border-radius: 12px;
+    animation: x-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+.x-panel + .x-panel { animation-delay: 80ms; }
+.x-panel h2 { font-size: 1.05rem; margin: 0 0 0.25rem; }
+
+/* ---- Option groups ---------------------------------------------------- */
+.x-group { border: 0; padding: 0; margin: 0 0 1.5rem; min-width: 0; }
+.x-group legend {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--x-text);
+}
+.x-hint { font-size: 0.82rem; color: var(--x-muted); margin: -0.3rem 0 0.7rem; }
+
+.x-choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.6rem; }
+.x-choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    margin: 0;
+    padding: 0.8rem 0.95rem;
+    background: transparent;
+    border: 1px solid var(--x-line);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+.x-choice:hover { border-color: #4B6356; transform: translateY(-1px); }
+.x-choice input {
+    margin-top: 0.25rem;
+    flex: none;
+    accent-color: var(--x-accent);
+    width: 1.05rem;
+    height: 1.05rem;
+}
+.x-choice:has(input:checked) {
+    border-color: var(--x-accent);
+    background: rgba(var(--x-accent-rgb), 0.12);
+}
+.x-choice:has(input:disabled) { opacity: 0.5; cursor: not-allowed; transform: none; }
+.x-choice strong { display: block; font-size: 0.95rem; }
+.x-choice span span { display: block; font-size: 0.8rem; color: var(--x-muted); font-weight: 400; }
+
+/* ---- Date range ------------------------------------------------------- */
+.x-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.x-dates label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--x-soft); margin-bottom: 0.3rem; }
+
+body.page-export .form-control {
+    background-color: var(--x-card);
+    border: 1px solid var(--x-line);
+    color: var(--x-text);
+}
+body.page-export .form-control:focus {
+    background-color: var(--x-card);
+    color: var(--x-text);
+    border-color: var(--x-accent);
+    box-shadow: 0 0 0 3px rgba(var(--x-accent-rgb), 0.22);
+}
+
+.x-presets { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.x-chip {
+    background: transparent;
+    border: 1px solid var(--x-line);
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--x-soft);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+.x-chip:hover { border-color: var(--x-accent); color: var(--x-accent); }
+
+/* ---- Footer of the form ----------------------------------------------- */
+.x-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--x-line);
+}
+.x-count { margin: 0; font-size: 0.92rem; color: var(--x-soft); }
+.x-count strong { color: var(--x-accent); font-size: 1.1rem; }
+
+/* ---- Side panel ------------------------------------------------------- */
+.x-facts { list-style: none; margin: 0.9rem 0 0; padding: 0; }
+.x-facts li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--x-line);
+    font-size: 0.9rem;
+}
+.x-facts li:first-child { border-top: 0; }
+.x-facts span { color: var(--x-soft); }
+.x-facts b { font-weight: 600; text-align: right; }
+.x-note { font-size: 0.82rem; color: var(--x-muted); margin: 1rem 0 0; }
+
+/* ---- Responsive ------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    body.page-export .page-head { padding: 1.5rem 0 1rem; }
+    body.page-export .section--tight { padding: 1rem 0 2.5rem; }
+}
+@media (max-width: 575.98px) {
+    .x-dates { grid-template-columns: 1fr; }
+    .x-panel { padding: 1.5rem 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) { .x-panel { animation: none; } }

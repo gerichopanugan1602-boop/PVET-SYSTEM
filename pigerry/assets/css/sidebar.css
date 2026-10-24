@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Sidebar: logo, icons, hover effects and collapsible (icon-only) mode.
+   Theme: black + green. Change the variables in the THEME block at the
+   bottom to re-color everything (Option B "full green" values are listed there).
+   Loaded AFTER style.css, so it overrides the old sidebar rules.
+   ========================================================================== */
+
+.sidebar {
+    transition: width 0.22s ease, transform 0.22s ease, padding 0.22s ease;
+    padding-top: 0.5rem;          /* trims the big space above the logo (overrides style.css) */
+}
+.main    { transition: margin-left 0.22s ease; }
+
+/* ---- Brand (logo only) ------------------------------------------------ */
+/* One variable controls the logo size; the collapsed state just changes it. */
+body { --logo-size: 150px; }      /* was 110px. Try 140-170px */
+
+.sidebar .brand {
+    display: flex;
+    align-items: center;          /* vertical middle */
+    justify-content: center;      /* horizontal middle */
+    height: var(--logo-size);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    transition: height 0.22s ease;
+}
+.sidebar .brand .brand-logo {
+    display: block;
+    flex: none;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    max-width: 100%;
+    margin: -14px 0;              /* trims transparent space inside the image; raise to -24px if still low */
+    object-fit: contain;          /* keeps the logo's shape inside the square box */
+    transition: width 0.22s ease, height 0.22s ease;
+    /* If your logo has dark parts that disappear on the dark background, add:
+       background: #fff; border-radius: 50%; padding: 6px; */
+}
+
+/* ---- Navigation items ------------------------------------------------- */
+.side-nav li + li { margin-top: 0.2rem; }
+
+.side-nav a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.8rem 0.75rem 0.8rem 1rem;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-icon {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+}
+.nav-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.18s ease, color 0.15s ease;
+}
+
+.nav-text {
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.15s ease, max-width 0.22s ease;
+}
+
+/* Hover */
+.side-nav a:hover .nav-icon svg { transform: translateX(2px) scale(1.07); }
+
+/* ---- Collapse button (desktop only) ----------------------------------- */
+.sidebar-collapse { display: none; }
+
+@media (min-width: 992px) {
+    .sidebar-collapse {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        top: 2.2rem;
+        right: -14px;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .sidebar-collapse svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.22s ease;
+    }
+
+    /* ---- Collapsed state: icons only ---- */
+    body.sidebar-collapsed { --sidebar-w: 76px; }
+    body.sidebar-collapsed .sidebar-collapse svg { transform: rotate(180deg); }
+    body.sidebar-collapsed .sidebar { padding-left: 0.85rem; padding-right: 0.85rem; }
+
+    body.sidebar-collapsed { --logo-size: 52px; }   /* was 44px */
+
+    body.sidebar-collapsed .sidebar .brand .brand-logo { margin: 0; }
+
+    body.sidebar-collapsed .side-nav a {
+        justify-content: center;
+        gap: 0;
+        padding: 0.8rem 0;
+        border-left-width: 0;
+        border-radius: var(--radius);
+    }
+    body.sidebar-collapsed .nav-text { max-width: 0; opacity: 0; }
+
+    /* Tooltip with the page name while collapsed */
+    body.sidebar-collapsed .side-nav a::after {
+        content: attr(data-label);
+        position: absolute;
+        left: calc(100% + 22px);
+        top: 50%;
+        transform: translateY(-50%) translateX(-4px);
+        background: #F1F7F3;
+        color: #0B1510;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.35rem 0.65rem;
+        border-radius: var(--radius);
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    body.sidebar-collapsed .side-nav a:hover::after,
+    body.sidebar-collapsed .side-nav a:focus-visible::after {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+
+    body.sidebar-collapsed .side-foot-sub { display: none; }
+    body.sidebar-collapsed .side-foot-name { font-size: 0.72rem; letter-spacing: 0.12em; text-align: center; }
+}
+
+
+/* ==========================================================================
+   THEME: black + green  (Option A)
+   Option B "full green": --side-bg #0F4D2E, --side-line #1E6B44,
+   --side-accent #9BE8B4, --side-brand #EAF6EE, --side-text #CFE8D8
+   ========================================================================== */
+
+.sidebar {
+    --side-bg: #0B1510;
+    --side-line: #243329;
+    --side-accent: #3DBE74;
+    --side-accent-soft: rgba(61, 190, 116, 0.55);
+    --side-brand: #5FD38D;
+    --side-text: #B8CFC0;
+    --side-hover-bg: rgba(61, 190, 116, 0.10);
+    background: var(--side-bg);
+    border-right: 1px solid var(--side-line);
+}
+
+/* Logo area */
+.brand { border-bottom-color: var(--side-line); }
+
+/* Menu */
+.side-nav a { color: var(--side-text); }
+.side-nav a:hover {
+    color: #fff;
+    background: var(--side-hover-bg);
+    border-left-color: var(--side-accent-soft);
+}
+.side-nav a.is-active {
+    color: #fff;
+    background: var(--side-hover-bg);
+    border-left-color: var(--side-accent);
+}
+.side-nav a:hover .nav-icon svg,
+.side-nav a.is-active .nav-icon svg { color: var(--side-accent); }
+
+/* Footer block + collapse button */
+.side-foot { border-top-color: var(--side-line); }
+.side-foot-name { color: var(--side-brand); }
+.side-foot-sub { color: var(--side-text); opacity: 0.75; }
+.sidebar-collapse { border: 1px solid var(--side-line); background: var(--side-bg); }
+.sidebar-collapse:hover { background: var(--side-accent); border-color: var(--side-accent); }
+
+@media (min-width: 992px) {
+    body.sidebar-collapsed .side-nav a:hover     { box-shadow: inset 2px 0 0 var(--side-accent-soft); }
+    body.sidebar-collapsed .side-nav a.is-active { box-shadow: inset 2px 0 0 var(--side-accent); }
+}
+
+/* Login / logout: a plain link pinned to the bottom of the sidebar (no hover effects) */
+.sidebar { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
+.side-auth {
+    margin-top: auto;             /* pushes it to the bottom, inside the sidebar's own padding */
+    margin-bottom: -0.75rem;      /* pulls it lower; make this more negative (e.g. -1.25rem) to go lower still */
+    padding: 0.75rem 0.75rem 0 calc(1rem + 2px);   /* same left edge as the menu icons */
+    border-top: 1px solid var(--side-line);        /* the line above the login */
+}
+.side-user { margin-bottom: 0.25rem; font-size: 0.78rem; color: var(--side-text); opacity: 0.8; }
+.side-user strong { color: var(--side-brand); font-weight: 600; }
+.side-auth .auth-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;                 /* same icon-to-text gap as the menu */
+    padding: 0.5rem 0;
+    color: var(--side-text);
+    text-decoration: none;
+    font-size: inherit;
+}
+.side-auth .auth-link:hover,
+.side-auth .auth-link:focus-visible { color: var(--side-text); text-decoration: none; }
+.side-auth .auth-link svg {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (min-width: 992px) {
+    body.sidebar-collapsed .side-user,
+    body.sidebar-collapsed .side-auth .auth-text { display: none; }
+    body.sidebar-collapsed .side-auth .auth-link { justify-content: center; }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        min-height: 0;
+        overflow-y: auto;
+    }
+}
+
+/* Top bar on phones (outside .sidebar, so it can't use the variables above) */
+.mobile-bar { background: #0B1510; border-bottom: 1px solid #243329; }
+.mobile-brand { color: #5FD38D; }

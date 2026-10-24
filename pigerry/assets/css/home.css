@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   Home page: soft dark green theme (same colors as the assessment page).
+   The sidebar is the deepest green-black (#0B1510); the page is a lighter,
+   calmer dark green-gray so the two don't blend together.
+   Keep these values the same as --a-* in assessment.css.
+   ========================================================================== */
+
+body.page-home {
+    --home-bg: #121A16;               /* page background */
+    --home-deep: #0F1612;             /* slightly deeper bands + footer */
+    --home-line: #2C3B33;             /* borders and dividers */
+    --home-accent: #3DBE74;           /* main green accent */
+    --home-accent-rgb: 61, 190, 116;
+    --home-accent-hover: #5FD38D;
+    --home-text: #EAF1EC;
+    --home-soft: #A9B8AE;
+    --home-muted: #82938A;
+
+    background: var(--home-bg);
+    color: var(--home-text);
+    color-scheme: dark;
+}
+
+/* Plain sans-serif font for the page content (the sidebar keeps its own) */
+body.page-home .main {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+body.page-home .main h1,
+body.page-home .main h2,
+body.page-home .main h3 {
+    color: var(--home-text);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+body.page-home :focus-visible { outline-color: var(--home-accent); }
+
+/* ---- Title + video (centered) ----------------------------------------- */
+.home-top { padding: 3rem 0 3.25rem; }
+
+.home-intro { text-align: center; margin-bottom: 1.75rem; }
+body.page-home .eyebrow {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--home-accent);
+}
+body.page-home .display-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    max-width: 20ch;
+    margin: 0 auto 0.75rem;
+}
+body.page-home .lead-text {
+    font-size: 1rem;
+    color: var(--home-soft);
+    max-width: 56ch;
+    margin: 0 auto;
+}
+
+.home-video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--home-line);
+    background: radial-gradient(120% 90% at 18% 8%, #2A3D32 0%, #17221C 55%, #0B1510 100%);
+}
+.home-video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---- Sections --------------------------------------------------------- */
+body.page-home .section { padding: 3.25rem 0; }
+body.page-home .section-title { font-size: 1.5rem; max-width: none; margin: 0 0 1.5rem; }
+
+.process-item { border-top: 1px solid var(--home-line); padding-top: 1rem; }
+body.page-home .process-num {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--home-accent);
+    margin-bottom: 0.5rem;
+}
+body.page-home .process-item h3 { font-size: 1.1rem; margin: 0 0 0.4rem; }
+body.page-home .process-item p { color: var(--home-soft); max-width: 34ch; margin: 0; }
+
+/* Types of support: a slightly deeper band */
+body.page-home .section--dark { background: var(--home-deep); }
+body.page-home .section--dark .section-title { max-width: 22ch; margin-bottom: 0.75rem; }
+body.page-home .muted-on-dark { color: var(--home-soft); max-width: 34ch; margin: 0; }
+body.page-home .support-list li { padding: 0.8rem 0; border-top: 1px solid var(--home-line); }
+body.page-home .support-num { color: var(--home-accent); }
+
+/* ---- Buttons and links (same look as the assessment page) -------------- */
+body.page-home .btn-pvet {
+    background: var(--home-accent);
+    border-color: var(--home-accent);
+    color: #06140C;
+    font-weight: 600;
+}
+body.page-home .btn-pvet:hover,
+body.page-home .btn-pvet:focus-visible {
+    background: var(--home-accent-hover);
+    border-color: var(--home-accent-hover);
+    color: #06140C;
+}
+body.page-home .btn-outline-pvet { border-color: var(--home-line); color: var(--home-text); background: transparent; }
+body.page-home .btn-outline-pvet:hover { border-color: var(--home-accent); color: var(--home-text); background: transparent; }
+body.page-home .text-link { color: var(--home-text); text-decoration-color: var(--home-accent); }
+body.page-home .text-link:hover { color: var(--home-accent-hover); }
+
+/* ---- Footer ----------------------------------------------------------- */
+body.page-home .site-footer {
+    background: var(--home-deep);
+    border-top: 0;
+    color: var(--home-muted);
+}
+
+/* ---- Small screens ---------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .home-top { padding: 1.75rem 0 2.5rem; }
+    body.page-home .section { padding: 2.5rem 0; }
+}

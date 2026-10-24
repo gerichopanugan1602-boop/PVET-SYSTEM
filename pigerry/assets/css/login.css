@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   Admin login page: soft dark green theme (same palette as assessment/export).
+   ========================================================================== */
+
+body.page-login {
+    --l-bg: #121A16;
+    --l-card: #1A241F;
+    --l-line: #2C3B33;
+    --l-accent: #3DBE74;
+    --l-accent-rgb: 61, 190, 116;
+    --l-accent-hover: #5FD38D;
+    --l-text: #EAF1EC;
+    --l-soft: #A9B8AE;
+    --l-muted: #82938A;
+    --l-error: #F08A80;
+
+    background: var(--l-bg);
+    color: var(--l-text);
+    color-scheme: dark;
+}
+
+body.page-login .main {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+body.page-login .main h1 { color: var(--l-text); font-weight: 700; letter-spacing: 0; line-height: 1.25; }
+body.page-login :focus-visible { outline-color: var(--l-accent); }
+
+body.page-login .page-head { padding: 2.5rem 0 1.25rem; border-bottom: 0; }
+body.page-login .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 0.5rem; }
+body.page-login .page-sub { color: var(--l-soft); font-size: 1rem; }
+body.page-login .section--tight { padding: 1.25rem 0 3.5rem; }
+
+body.page-login .text-link { color: var(--l-text); text-decoration-color: var(--l-accent); }
+body.page-login .text-link:hover { color: var(--l-accent-hover); }
+body.page-login .site-footer { border-top: 0; color: var(--l-muted); }
+
+body.page-login .notice {
+    background: rgba(var(--l-accent-rgb), 0.12);
+    border-left-color: var(--l-accent);
+    color: var(--l-text);
+}
+body.page-login .notice--error {
+    background: rgba(240, 138, 128, 0.12);
+    border-left-color: var(--l-error);
+    margin-bottom: 1.25rem;
+}
+
+/* ---- Form panel ------------------------------------------------------- */
+.l-panel {
+    max-width: 440px;
+    padding: 1.9rem;
+    background: var(--l-card);
+    border: 1px solid var(--l-line);
+    border-radius: 12px;
+    animation: l-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+@keyframes l-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.l-field { margin-bottom: 1.15rem; }
+.l-field label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--l-text); margin-bottom: 0.35rem; }
+
+body.page-login .form-control {
+    background-color: var(--l-bg);
+    border: 1px solid var(--l-line);
+    color: var(--l-text);
+}
+body.page-login .form-control:focus {
+    background-color: var(--l-bg);
+    color: var(--l-text);
+    border-color: var(--l-accent);
+    box-shadow: 0 0 0 3px rgba(var(--l-accent-rgb), 0.22);
+}
+
+body.page-login .btn-pvet {
+    background: var(--l-accent);
+    border-color: var(--l-accent);
+    color: #06140C;
+    font-weight: 600;
+}
+body.page-login .btn-pvet:hover,
+body.page-login .btn-pvet:focus-visible {
+    background: var(--l-accent-hover);
+    border-color: var(--l-accent-hover);
+    color: #06140C;
+}
+.l-submit { width: 100%; margin-top: 0.4rem; }
+.l-back { margin: 1.1rem 0 0; text-align: center; font-size: 0.88rem; color: var(--l-muted); }
+
+@media (max-width: 991.98px) {
+    body.page-login .page-head { padding: 1.5rem 0 1rem; }
+    body.page-login .section--tight { padding: 1rem 0 2.5rem; }
+}
+@media (max-width: 575.98px) {
+    .l-panel { padding: 1.5rem 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) { .l-panel { animation: none; } }

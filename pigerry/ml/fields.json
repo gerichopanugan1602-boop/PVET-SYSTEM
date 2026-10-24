@@ -1,0 +1,873 @@
+{
+  "ID": {
+    "label": "Farmer identifier",
+    "type": "identifier",
+    "codes": {},
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "identifier",
+    "source": "Workbook header; identifier provenance needs PVET confirmation"
+  },
+  "AGE": {
+    "label": "Age range",
+    "type": "category",
+    "codes": {
+      "0": "17 and below",
+      "1": "18–25",
+      "2": "26–35",
+      "3": "36–45",
+      "4": "46–55",
+      "5": "56 and above"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "SEX": {
+    "label": "Sex",
+    "type": "category",
+    "codes": {
+      "0": "Male",
+      "1": "Female"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "CIVIL STATUS": {
+    "label": "Civil status",
+    "type": "category",
+    "codes": {
+      "0": "Single",
+      "1": "Married",
+      "2": "Widowed",
+      "3": "Separated"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "MUNICIPALITY": {
+    "label": "Municipality",
+    "type": "category",
+    "codes": {
+      "0": "Cabarroguis",
+      "1": "Diffun",
+      "2": "Maddela",
+      "3": "Nagtipunan",
+      "4": "Aglipay",
+      "5": "Saguday"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "BARANGAY": {
+    "label": "Barangay",
+    "type": "text",
+    "codes": {},
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "EDUC": {
+    "label": "Highest education",
+    "type": "category",
+    "codes": {
+      "0": "No formal education",
+      "1": "Elementary level",
+      "2": "Elementary graduate",
+      "3": "High school level",
+      "4": "High school graduate",
+      "5": "College level",
+      "6": "College graduate"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "EMPLOY": {
+    "label": "Employment",
+    "type": "category",
+    "codes": {
+      "0": "Employed",
+      "1": "Self-employed",
+      "2": "Unemployed",
+      "3": "Student"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INCOME": {
+    "label": "Monthly household income",
+    "type": "category",
+    "codes": {
+      "0": "Below PHP 10,000",
+      "1": "PHP 10,000–20,000",
+      "2": "PHP 20,001–30,000",
+      "3": "PHP 30,001 and above"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "OTHER": {
+    "label": "Other income/work",
+    "type": "text",
+    "codes": {},
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "FARM CLASS": {
+    "label": "Farm classification",
+    "type": "category",
+    "codes": {
+      "0": "Backyard",
+      "1": "Commercial"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "NUMSWINE": {
+    "label": "Number of swine range",
+    "type": "category",
+    "codes": {
+      "0": "1–10 pigs",
+      "1": "11–20 pigs",
+      "2": "21–50 pigs",
+      "3": "51 and above"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "YEARSEXP": {
+    "label": "Swine farming experience",
+    "type": "category",
+    "codes": {
+      "0": "Below 1 year",
+      "1": "1–3 years",
+      "2": "4–7 years",
+      "3": "8 years and above"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "FEEDPRAC": {
+    "label": "Feeding practice",
+    "type": "category",
+    "codes": {
+      "0": "Traditional feeding",
+      "1": "Commercial feeds",
+      "2": "Mixed feeding"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "FEEDSRC": {
+    "label": "Feed source",
+    "type": "category",
+    "codes": {
+      "0": "Homemade feeds",
+      "1": "Agricultural supply store",
+      "2": "Commercial feed brand dealership"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "HOUSING": {
+    "label": "Housing system",
+    "type": "category",
+    "codes": {
+      "0": "Open",
+      "1": "Semi-closed",
+      "2": "Closed"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "WATERSRC": {
+    "label": "Water source",
+    "type": "category",
+    "codes": {
+      "0": "Deep well",
+      "1": "Faucet",
+      "2": "River/Creek"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "EXPENSES": {
+    "label": "Monthly farm expense range",
+    "type": "category",
+    "codes": {
+      "0": "Below PHP 5,000",
+      "1": "PHP 5,000–10,000",
+      "2": "PHP 10,001–20,000",
+      "3": "PHP 20,001 and above"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "MORTALITY": {
+    "label": "Annual mortality range",
+    "type": "category",
+    "codes": {
+      "0": "None",
+      "1": "1–5",
+      "2": "6–10",
+      "3": "More than 10"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DIS_ASF": {
+    "label": "African Swine Fever",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DIS_HOGCHOL": {
+    "label": "Hog Cholera",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DIS_PNEUMO": {
+    "label": "Pneumonia",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DIS_DIARR": {
+    "label": "Diarrhea",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DIS_SKIN": {
+    "label": "Skin disease",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DIS_NONE": {
+    "label": "No diseases",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "ASF_AWARE": {
+    "label": "Aware of ASF",
+    "type": "category",
+    "codes": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "ASF_OUTBREAK": {
+    "label": "Experienced ASF outbreak",
+    "type": "category",
+    "codes": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "SYM_FEVER": {
+    "label": "High fever",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "SYM_APPETITE": {
+    "label": "Loss of appetite",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "SYM_SKIN": {
+    "label": "Skin discoloration",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "SYM_SUDDEN": {
+    "label": "Sudden death",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "SYM_WEAK": {
+    "label": "Weakness",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "SYM_DOTKNOW": {
+    "label": "Does not know symptoms",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "BIO_CLEAN": {
+    "label": "Cleaning/disinfection",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "BIO_FOOTHBATH": {
+    "label": "Foot bath",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "BIO_ISOLATION": {
+    "label": "Isolation of sick pigs",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "BIO_VISITORS": {
+    "label": "Controlled visitors",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "BIO_WASTE": {
+    "label": "Proper waste disposal",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "BIO_NONE": {
+    "label": "No biosecurity measures",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "VET_CONSULT": {
+    "label": "Consults veterinarian when pigs are sick",
+    "type": "category",
+    "codes": {
+      "0": "Always",
+      "1": "Sometimes",
+      "2": "Rarely",
+      "3": "Never"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "DISINFECT_FREQ": {
+    "label": "Disinfection frequency",
+    "type": "category",
+    "codes": {
+      "0": "Daily",
+      "1": "Weekly",
+      "2": "Monthly",
+      "3": "Rarely",
+      "4": "Never"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "VACCINATED": {
+    "label": "Pigs received vaccinations",
+    "type": "category",
+    "codes": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_MAO": {
+    "label": "Municipal Agriculture Office",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_OPVET": {
+    "label": "Provincial Veterinarian",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_DABAI": {
+    "label": "DA-BAI",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_PRIVVET": {
+    "label": "Private veterinarian",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_SOCMED": {
+    "label": "Social media",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_FARMERS": {
+    "label": "Fellow farmers",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "INFO_WEB": {
+    "label": "Internet websites",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "ORG_LGU": {
+    "label": "LGU veterinary/agriculture office",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "ORG_OPVET": {
+    "label": "Provincial Veterinarian",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "ORG_DA": {
+    "label": "Department of Agriculture",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "ORG_NGO": {
+    "label": "NGO",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "ORG_PRIVCLINIC": {
+    "label": "Private clinic",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "ORG_FEEDSUP": {
+    "label": "Feed supplier/company",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_VETCONSULT": {
+    "label": "Veterinary consultation",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_ASFPREV": {
+    "label": "ASF prevention assistance",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_VACC": {
+    "label": "Vaccination",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_DIAG": {
+    "label": "Disease diagnosis",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_SANIT": {
+    "label": "Sanitation assistance",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_FEEDNUTR": {
+    "label": "Feeding/nutrition consultation",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_MEDREC": {
+    "label": "Medicine recommendations",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_EMERG": {
+    "label": "Emergency treatment",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_TRAINING": {
+    "label": "Training/seminars",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "NEED_FINANCE": {
+    "label": "Financial/livelihood assistance",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "VET_ACCESS": {
+    "label": "Veterinary access",
+    "type": "category",
+    "codes": {
+      "0": "Very accessible",
+      "1": "Accessible",
+      "2": "Moderately accessible",
+      "3": "Difficult to access",
+      "4": "Not accessible"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "PREF_LOC": {
+    "label": "Preferred service location",
+    "type": "category",
+    "codes": {
+      "0": "Within barangay",
+      "1": "Within municipality",
+      "2": "Anywhere in Quirino",
+      "3": "Online/Remote"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "CH_LACKINFO": {
+    "label": "Lack of information",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "CH_TRANSPORT": {
+    "label": "Transportation difficulty",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "CH_FINANCE": {
+    "label": "Financial limitations",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "CH_LACKVET": {
+    "label": "Lack of veterinarians",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "CH_LACKMED": {
+    "label": "Lack of medicines",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "CH_INTERNET": {
+    "label": "Poor internet",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "CH_DISTANCE": {
+    "label": "Physical distance",
+    "type": "checkbox",
+    "codes": {
+      "1": "Selected",
+      "0": "Not selected"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "clustering",
+    "source": "VALUES (1).docx"
+  },
+  "SATISFACTION": {
+    "label": "Service satisfaction",
+    "type": "category",
+    "codes": {
+      "0": "Very satisfied",
+      "1": "Satisfied",
+      "2": "Neutral",
+      "3": "Dissatisfied",
+      "4": "Very dissatisfied"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  },
+  "USE_SYSTEM": {
+    "label": "Willing to use recommendation system",
+    "type": "category",
+    "codes": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "missing_policy": "Preserve unknown; reject missing clustering inputs at prediction. Training modes are learned only on development data.",
+    "use": "profile/evaluation",
+    "source": "VALUES (1).docx"
+  }
+}

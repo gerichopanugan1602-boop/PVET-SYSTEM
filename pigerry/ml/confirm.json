@@ -1,0 +1,10 @@
+{
+  "checkbox_selected": 1,
+  "checkbox_unselected": 0,
+  "missing_meaning": "No observed blank cells in the current corrected dataset. User instructed proceeding without new imputation on 2026-10-06. Historical missing-response meanings remain unknown; valid category code 0 is not treated as missing. Reassess if a future dataset has blanks.",
+  "one_row_per_farmer": true,
+  "prior_processing": "Unknown. On 2026-10-06 the project user instructed recording earlier cleaning, imputation and other processing history as unknown. Do not infer processing from the filename.",
+  "confirmed_by": "Project user (conversation confirmation; PVET affiliation not established)",
+  "confirmed_on": "2026-10-06",
+  "notes": "User confirmed on 2026-10-06: all checkboxes use 1 = selected and 0 = not selected; each row represents one distinct farmer; disregard the filename as evidence of processing. User also confirmed personally changing ID 139 YEARSEXP from 4 to 3 in Excel. Source-response verification of that change was not stated. User instructed flagging earlier processing history as unknown and proceeding with no new imputation because no blanks are observed. No claim of historical missing-response semantics or independent PVET approval is made."
+}

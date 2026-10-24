@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+body.page-assessment {
+    --a-bg: #121A16;
+    --a-card: #1A241F;
+    --a-line: #2C3B33;
+    --a-accent: #3DBE74;
+    --a-accent-rgb: 61, 190, 116;
+    --a-accent-hover: #5FD38D;
+    --a-text: #EAF1EC;
+    --a-soft: #A9B8AE;
+    --a-muted: #82938A;
+    --a-error: #F08A80;
+
+    background: var(--a-bg);
+    color: var(--a-text);
+    color-scheme: dark;
+}
+
+body.page-assessment .main {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+body.page-assessment .main h1,
+body.page-assessment .main h2,
+body.page-assessment .main h3 {
+    color: var(--a-text);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+body.page-assessment :focus-visible { outline-color: var(--a-accent); }
+
+body.page-assessment .page-head { padding: 2.5rem 0 1.25rem; border-bottom: 0; }
+body.page-assessment .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 0.5rem; }
+body.page-assessment .page-sub { color: var(--a-soft); font-size: 1rem; }
+body.page-assessment .section--tight { padding: 1.5rem 0 3.5rem; }
+
+body.page-assessment .stepper { margin-bottom: 2rem; }
+body.page-assessment .stepper-item { border-top-color: var(--a-line); color: var(--a-muted); }
+body.page-assessment .stepper-item.is-done { border-top-color: rgba(var(--a-accent-rgb), 0.55); color: var(--a-soft); }
+body.page-assessment .stepper-item.is-active { border-top-color: var(--a-accent); color: var(--a-text); }
+
+body.page-assessment .step-head { margin-bottom: 1.75rem; }
+body.page-assessment .step-count { color: var(--a-accent); }
+body.page-assessment .step-head h2 { font-size: 1.5rem; margin-bottom: 0.4rem; }
+body.page-assessment .step-head p:last-child { color: var(--a-soft); }
+
+body.page-assessment .field-label { color: var(--a-text); font-weight: 600; font-size: 0.95rem; }
+body.page-assessment .field-label .req { color: var(--a-accent); }
+body.page-assessment .field-hint { color: var(--a-muted); }
+
+body.page-assessment .form-control,
+body.page-assessment .form-select {
+    background-color: var(--a-card);
+    border-color: var(--a-line);
+    color: var(--a-text);
+}
+body.page-assessment .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23A9B8AE' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+body.page-assessment .form-select option { background: var(--a-card); color: var(--a-text); }
+body.page-assessment .form-control:focus,
+body.page-assessment .form-select:focus {
+    background-color: var(--a-card);
+    color: var(--a-text);
+    border-color: var(--a-accent);
+    box-shadow: 0 0 0 3px rgba(var(--a-accent-rgb), 0.22);
+}
+body.page-assessment .input-unit .unit { color: var(--a-muted); }
+
+body.page-assessment .choice {
+    background: var(--a-card);
+    border-color: var(--a-line);
+    color: var(--a-text);
+}
+body.page-assessment .choice:hover { border-color: #4B6356; }
+body.page-assessment .choice input { accent-color: var(--a-accent); }
+body.page-assessment .choice:has(input:checked) {
+    border-color: var(--a-accent);
+    background: rgba(var(--a-accent-rgb), 0.12);
+}
+body.page-assessment .choice:has(input:focus-visible) { outline-color: var(--a-accent); }
+
+body.page-assessment .field-error { color: var(--a-error); }
+body.page-assessment .field.has-error .form-control,
+body.page-assessment .field.has-error .form-select,
+body.page-assessment .field.has-error .choice { border-color: var(--a-error); }
+
+body.page-assessment .btn-pvet {
+    background: var(--a-accent);
+    border-color: var(--a-accent);
+    color: #06140C;
+    font-weight: 600;
+}
+body.page-assessment .btn-pvet:hover,
+body.page-assessment .btn-pvet:focus-visible {
+    background: var(--a-accent-hover);
+    border-color: var(--a-accent-hover);
+    color: #06140C;
+}
+body.page-assessment .btn-outline-pvet { border-color: var(--a-line); color: var(--a-text); background: transparent; }
+body.page-assessment .btn-outline-pvet:hover { border-color: var(--a-accent); color: var(--a-text); background: transparent; }
+
+body.page-assessment .form-actions { margin-top: 2.25rem; padding-top: 1.25rem; border-top-color: var(--a-line); }
+body.page-assessment .step-status { color: var(--a-muted); }
+
+body.page-assessment .text-link { color: var(--a-text); text-decoration-color: var(--a-accent); }
+body.page-assessment .text-link:hover { color: var(--a-accent-hover); }
+
+body.page-assessment .review-block { border-top: 1px solid var(--a-line); margin-bottom: 1.75rem; }
+body.page-assessment .review-head h3 { font-size: 1.1rem; }
+body.page-assessment .link-btn { color: var(--a-accent); }
+body.page-assessment .review-row { border-bottom-color: var(--a-line); }
+body.page-assessment .review-row dt { color: var(--a-soft); }
+body.page-assessment .review-row dd { color: var(--a-text); }
+
+body.page-assessment .notice {
+    background: rgba(var(--a-accent-rgb), 0.12);
+    border-left-color: var(--a-accent);
+    color: var(--a-text);
+}
+body.page-assessment .notice--error {
+    background: rgba(240, 138, 128, 0.12);
+    border-left-color: var(--a-error);
+}
+
+body.page-assessment .panel {
+    background: var(--a-card);
+    border-color: var(--a-line);
+    padding: 2rem;
+}
+body.page-assessment .confirmation h2 { font-size: 1.6rem; }
+body.page-assessment .confirmation h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+body.page-assessment .confirmation p { color: var(--a-soft); }
+body.page-assessment .confirmation li { color: var(--a-text); margin-bottom: 0.25rem; }
+body.page-assessment .fact-list { border-top: 1px solid var(--a-line); }
+body.page-assessment .fact-list > div { border-bottom-color: var(--a-line); }
+body.page-assessment .fact-list dt { color: var(--a-soft); }
+body.page-assessment .fact-list dd { color: var(--a-text); }
+
+body.page-assessment .site-footer { border-top: 0; color: var(--a-muted); }
+
+@media (max-width: 991.98px) {
+    body.page-assessment .page-head { padding: 1.5rem 0 1rem; }
+    body.page-assessment .section--tight { padding: 1rem 0 2.5rem; }
+}
+@media (max-width: 575.98px) {
+    body.page-assessment .panel { padding: 1.5rem 1.25rem; }
+}
